@@ -12,29 +12,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
 </head>
 
 <body class="bg-secondary">
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="#">Team tool</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                  aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarID">
-                  <div class="navbar-nav">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      
-                  </div>
-              </div>
-          </div>
-      </nav>
-    <div class="container my-5 bg-dark p-5">
-        <input type="button" value="click" onclick="msg()" />
-        <a name="" id="" class="btn btn-primary" href="#" role="button">gg</a>
-    </div>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Team tool</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
 
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5 bg-dark p-5">
+        <input type="file" id="uploadfile" accept=".csv" />
+        <a name="" id="uploadconfirm" class="btn btn-primary" href="#" role="button">upload</a>
+        <div id="output">
+
+        </div>
+    </div>
 </body>
 
-</html> 
+</html>
