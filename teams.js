@@ -55,33 +55,41 @@ $(document).ready(function () {
                         row = "";
                     }
                     document.getElementById('table').innerHTML = tablecontent;
+                    makeTeams();
 
-                    // Initialise constants for Sprint 1, not customisable yet.
-                    const maxTeams = 5;
-                    var minStudents = 5;
-                    var maxStudents = 7;
-                    // Set all workshops into an array
-                    const wrkShops = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12", "Not enrolled in workshop class yet"];
-                    
-                    // Iterate through all workshop classes to sort students by workshop
-                    for (var i = 0; i < wrkShops.length; i++) {
-                        // Create empty array for students to be sorted into
-                        var students = [];
-                        // Iterate through 2D array of students from the csv
-                        for (var k = 0; k < studentsdata.length; k++) {
-                            // Add students with matching workshop class to the array
-                            if (studentsdata[k][7] == wrkShops[i]) {
-                                students.push(studentsdata[k]);
-                            }
-                        }
-                        // Work on sorted students here
-                        console.log(students);
-                    }
                 }
             })
     })
 
-//begin code here
-//the data extracted from teh csv file is put into the 'studentdata' 2d array 
+    //begin code here
+    //the data extracted from teh csv file is put into the 'studentdata' 2d array 
+
+
+
+    
+    function makeTeams() {
+        // Initialise constants for Sprint 1, not customisable yet.
+        const maxTeams = 5;
+        var minStudents = 5;
+        var maxStudents = 7;
+        // Set all workshops into an array
+        const wrkShops = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12", "Not enrolled in workshop class yet"];
+
+        // Iterate through all workshop classes to sort students by workshop
+        for (var i = 0; i < wrkShops.length; i++) {
+            // Create empty array for students to be sorted into
+            var students = [];
+            // Iterate through 2D array of students from the csv
+            for (var k = 0; k < studentsdata.length; k++) {
+                // Add students with matching workshop class to the array
+                if (studentsdata[k][7] == wrkShops[i]) {
+                    students.push(studentsdata[k]);
+                }
+            }
+            // Work on sorted students here
+            console.log(students);
+        }
+
+    }
 
 });
