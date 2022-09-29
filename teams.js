@@ -18,7 +18,7 @@ $(document).ready(function () {
                             studentsdata.push(results.data[i])
                         }
                     }
-                    console.log(studentsdata)
+                    //console.log(studentsdata)
                     csvtable = `
                     <table class="table table-bordered text-white">
                         <thead class="thead-dark">
@@ -55,16 +55,28 @@ $(document).ready(function () {
                         row = "";
                     }
                     document.getElementById('table').innerHTML = tablecontent;
+
+                    // Initialise constants for Sprint 1, not customisable yet.
+                    const maxTeams = 5;
+                    var minStudents = 5;
+                    var maxStudents = 7;
+                    // Set all workshops into an array
+                    const wrkShops = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12", "Not enrolled in workshop class yet"];
+                    
+                    for (var i = 0; i < wrkShops.length; i++) {
+                        var students = [];
+                        for (var k = 0; k < studentsdata.length; k++) {
+                            if (studentsdata[k][7] == wrkShops[i]) {
+                                students.push(studentsdata[k]);
+                            }
+                        }
+                        console.log(students);
+                    }
                 }
             })
     })
 
 //begin code here
 //the data extracted from teh csv file is put into the 'studentdata' 2d array 
-
-
-
-
-
 
 });
