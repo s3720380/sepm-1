@@ -80,8 +80,15 @@ $(document).ready(function () {
                 }
             })
     })
-
+    
 //begin code here
 //the data extracted from teh csv file is put into the 'studentdata' 2d array 
-
+    
+    function toCSV(inputArray, separator = ",") {
+    let rowsAsString = inputArray.map(row => {
+    return row.join(separator);
+    })
+    return csvFormat = rowsAsString.join("\n");
+}
+// Array to CSV
 });
