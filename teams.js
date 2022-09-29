@@ -14,8 +14,9 @@ $(document).ready(function () {
                         if (i === 0) {
                             header.push(results.data[i])
                             continue
+                        } else {
+                            studentsdata.push(results.data[i])
                         }
-                        studentsdata.push(results.data[i])
                     }
                     console.log(studentsdata)
                     csvtable = `
@@ -50,7 +51,7 @@ $(document).ready(function () {
 
                             j++;
                         }
-                        tablecontent += `<tr> <th scope="row">` + (i + 1) + `</th>` + row + "</tr>";
+                        tablecontent += `</th>` + row + "</tr>";
                         row = "";
                     }
                     document.getElementById('table').innerHTML = tablecontent;
