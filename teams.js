@@ -95,37 +95,42 @@ $(document).ready(function () {
                 }
                 else if (l == 0) {
                     for(var z = 0; z < 7; z++) {
+                        students[z].unshift("1");
                         currentTeam.push(students[z]);
                     }
                     teams.push(currentTeam);
                 }
                 else if (l == 1) {
                     for(var z = 7; z < 14; z++) {
+                        students[z].unshift("2");
                         currentTeam.push(students[z]);
                     }
                     teams.push(currentTeam);
                 }
                 else if (l == 2) {
                     for(var z = 14; z < 21; z++) {
+                        students[z].unshift("3");
                         currentTeam.push(students[z]);
                     }
                     teams.push(currentTeam);
                 }
                 else if (l == 3) {
                     for(var z = 21; z < 28; z++) {
+                        students[z].unshift("4");
                         currentTeam.push(students[z]);
                     }
                     teams.push(currentTeam);
                 }
                 else if (l == 4) {
                     for(var z = 28; z < 35; z++) {
+                        students[z].unshift("5");
                         currentTeam.push(students[z]);
                     }
                     teams.push(currentTeam);
                 }
             }
         }
-        console.log(teams);
+        console.log(teams.toString());
 
     }
     
