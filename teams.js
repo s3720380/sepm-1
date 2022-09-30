@@ -61,12 +61,13 @@ $(document).ready(function () {
             })
     })
 
+
     //begin code here
     //the data extracted from teh csv file is put into the 'studentdata' 2d array 
 
 
 
-    
+
     function makeTeams() {
         // Initialise constants for Sprint 1, not customisable yet.
         const maxTeams = 5;
@@ -91,5 +92,19 @@ $(document).ready(function () {
         }
 
     }
+    
+    function toCSV(inputArray, separator = ",") {
+        let rowsAsString = inputArray.map(row => {
+            return row.join(separator);
+        })
+        return csvFormat = rowsAsString.join("\n");
+    }
 
 });
+
+
+//begin code here
+//the data extracted from teh csv file is put into the 'studentdata' 2d array 
+
+
+
