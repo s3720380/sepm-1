@@ -75,7 +75,7 @@ $(document).ready(function () {
         var maxStudents = 7;
         // Set all workshops into an array
         const wrkShops = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12", "Not enrolled in workshop class yet"];
-
+        const teams = [];
         // Iterate through all workshop classes to sort students by workshop
         for (var i = 0; i < wrkShops.length; i++) {
             // Create empty array for students to be sorted into
@@ -88,8 +88,44 @@ $(document).ready(function () {
                 }
             }
             // Work on sorted students here
-            console.log(students);
+            for(var l = 0; l < 5; l ++) {
+                var currentTeam = [];
+                if (students[l] == undefined) {
+                    break;
+                }
+                else if (l == 0) {
+                    for(var z = 0; z < 7; z++) {
+                        currentTeam.push(students[z]);
+                    }
+                    teams.push(currentTeam);
+                }
+                else if (l == 1) {
+                    for(var z = 7; z < 14; z++) {
+                        currentTeam.push(students[z]);
+                    }
+                    teams.push(currentTeam);
+                }
+                else if (l == 2) {
+                    for(var z = 14; z < 21; z++) {
+                        currentTeam.push(students[z]);
+                    }
+                    teams.push(currentTeam);
+                }
+                else if (l == 3) {
+                    for(var z = 21; z < 28; z++) {
+                        currentTeam.push(students[z]);
+                    }
+                    teams.push(currentTeam);
+                }
+                else if (l == 4) {
+                    for(var z = 28; z < 35; z++) {
+                        currentTeam.push(students[z]);
+                    }
+                    teams.push(currentTeam);
+                }
+            }
         }
+        console.log(teams);
 
     }
     
