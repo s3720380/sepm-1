@@ -2,6 +2,7 @@ $(document).ready(function() {
 
     document.getElementById("uploadconfirm").addEventListener("click", function() {
         document.getElementById("download").hidden = false
+        document.getElementById("uploadconfirm").hidden = true
     });
 
     function downloadCSVFile(csv, filename) {
@@ -23,7 +24,7 @@ $(document).ready(function() {
     }
 
     document.getElementById("download").addEventListener("click", function() {
-        var html = document.getElementById("table-container");
+        var html = document.getElementById("#table-container");
         htmlToCSV(html, "teams.csv");
     });
 
