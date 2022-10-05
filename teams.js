@@ -11,6 +11,7 @@ $(document).ready(function() {
     //below function uploads a file and presents it in a tabular format 
     uploadconfirm = document.getElementById('uploadconfirm').addEventListener('click', () => {
         document.getElementById("uploadconfirm").hidden = true
+        console.log('Student preferences uploaded successfully');
         Papa.parse(document.getElementById('uploadfile').files[0], {
             download: true,
             skipEmptyLines: true,
@@ -25,8 +26,8 @@ $(document).ready(function() {
                     }
                 }
                 addStudentsToWorkShops();
-                //TABLE CODE GOES HERE.
-                makeWorkshopTeams();
+                createGroups();
+                printWorkshopTeams();
             }
         })
     })
@@ -46,11 +47,11 @@ $(document).ready(function() {
         for (let student of studentsdata) {
             workshops[student[workshopcolumn]].push(student);
         }
-        sortProjectPrefernces();
+        sortProjectPreferences();
         //console.log(workshops);
     }
 
-    function sortProjectPrefernces() {
+    function sortProjectPreferences() {
         let optioncolumn = 9;
         let projectteams = {};
         assignWorkshopName(workshopteams);
@@ -71,7 +72,19 @@ $(document).ready(function() {
         console.log(workshopteams);
     }
 
-    function makeWorkshopTeams() {
+    function createGroups() {
+        console.log(JSON.stringify(workshopteams, null, 3))
 
     }
+
+    function printWorkshopTeams() {
+        csvtable = `
+                    <table class="table table-bordered text-white">
+                        <tbody id="table">   
+                        </tbody>
+                    </table>         
+                     `;
+        document.querySelector("#table-container").innerHTML = csvtable;
+    }
+
 });
