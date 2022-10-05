@@ -98,24 +98,13 @@ $(document).ready(function() {
         document.querySelector("#table-container").innerHTML = csvtable;
 
         let j = 0;
+        let k = 0;
         let row = "";
         let tablecontent = "";
-        //     for (i = 0; i < groups.length; i++) {
-        //         j = 0;
-        //         while (j < groups[i].length) {
-        //             row += `
-        //                      <td>${groups[i][j]}</td>                                                   
-        //                `;
 
-        //             j++;
-        //         }
-        //         tablecontent += `</th>` + row + "</tr>";
-        //         row = "";
-        //     }
-        //     document.getElementById('table').innerHTML = tablecontent;
-        // }
         for (i = 0; i < prunedgroups.length; i++) {
             j = 0;
+            k++;
             while (j < prunedgroups[i].length) {
                 row += `
                          <td>${prunedgroups[i][j]}</td>                                                   
@@ -123,7 +112,7 @@ $(document).ready(function() {
 
                 j++;
             }
-            let string = "Group: " + i
+            let string = "Group: " + k
             tablecontent += `</th>` + string + row + "</tr>";
             row = "";
         }
