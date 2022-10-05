@@ -78,9 +78,9 @@ $(document).ready(function() {
     function createGroups() {
         //console.log(JSON.stringify(workshopteams, null, 3))
         groups = $.map(workshopteams, function(value) {
-            return [value]
-        })
-        console.log(groups);
+                return [value]
+            })
+            //console.log(groups);
 
         for (i = 0; i < groups.length; i++) {
             prunedgroups = prunedgroups.concat(groups[i]);
