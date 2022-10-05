@@ -6,6 +6,7 @@ $(document).ready(function() {
     const minStudents = 5;
     const maxStudents = 7;
     let groups = [];
+    let prunedgroups = [];
     const projectoptions = ["Web-app", "iOS app", "Android app", "desktop application"];
     const workshopnames = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12"];
 
@@ -71,7 +72,7 @@ $(document).ready(function() {
             }
 
         }
-        console.log(workshopteams);
+        //console.log(workshopteams);
     }
 
     function createGroups() {
@@ -79,7 +80,12 @@ $(document).ready(function() {
         groups = $.map(workshopteams, function(value) {
             return [value]
         })
-        console.log(groups)
+        console.log(groups);
+
+        for (i = 0; i < groups.length; i++) {
+            prunedgroups = prunedgroups.concat(groups[i]);
+        }
+        console.log(prunedgroups);
     }
 
     function printWorkshopTeams() {
@@ -94,16 +100,31 @@ $(document).ready(function() {
         let j = 0;
         let row = "";
         let tablecontent = "";
-        for (i = 0; i < groups.length; i++) {
+        //     for (i = 0; i < groups.length; i++) {
+        //         j = 0;
+        //         while (j < groups[i].length) {
+        //             row += `
+        //                      <td>${groups[i][j]}</td>                                                   
+        //                `;
+
+        //             j++;
+        //         }
+        //         tablecontent += `</th>` + row + "</tr>";
+        //         row = "";
+        //     }
+        //     document.getElementById('table').innerHTML = tablecontent;
+        // }
+        for (i = 0; i < prunedgroups.length; i++) {
             j = 0;
-            while (j < groups[i].length) {
+            while (j < prunedgroups[i].length) {
                 row += `
-                         <td>${groups[i][j]}</td>                                                   
+                         <td>${prunedgroups[i][j]}</td>                                                   
                    `;
 
                 j++;
             }
-            tablecontent += `</th>` + row + "</tr>";
+            let string = "Group: " + i
+            tablecontent += `</th>` + string + row + "</tr>";
             row = "";
         }
         document.getElementById('table').innerHTML = tablecontent;
