@@ -5,6 +5,7 @@ $(document).ready(function() {
     const workshopteams = {};
     const minStudents = 5;
     const maxStudents = 7;
+    let groups = [];
     const projectoptions = ["Web-app", "iOS app", "Android app", "desktop application"];
     const workshopnames = ["WRK01/01", "WRK01/02", "WRK01/03", "WRK01/04", "WRK01/05", "WRK01/06", "WRK01/07", "WRK01/08", "WRK01/09", "WRK01/10", "WRK01/11", "WRK01/12"];
 
@@ -75,7 +76,7 @@ $(document).ready(function() {
 
     function createGroups() {
         //console.log(JSON.stringify(workshopteams, null, 3))
-        var groups = $.map(workshopteams, function(value) {
+        groups = $.map(workshopteams, function(value) {
             return [value]
         })
         console.log(groups)
@@ -89,6 +90,23 @@ $(document).ready(function() {
                     </table>         
                      `;
         document.querySelector("#table-container").innerHTML = csvtable;
+
+        let j = 0;
+        let row = "";
+        let tablecontent = "";
+        for (i = 0; i < groups.length; i++) {
+            j = 0;
+            while (j < groups[i].length) {
+                row += `
+                         <td>${groups[i][j]}</td>                                                   
+                   `;
+
+                j++;
+            }
+            tablecontent += `</th>` + row + "</tr>";
+            row = "";
+        }
+        document.getElementById('table').innerHTML = tablecontent;
     }
 
 });
