@@ -31,12 +31,15 @@ $(document).ready(function() {
     function htmlToCSV(html, filename) {
         var data = [];
         var rows = document.querySelectorAll("table tr");
+        let k = 0;
 
         for (var i = 0; i < rows.length; i++) {
+            k++;
             var row = [],
                 cols = rows[i].querySelectorAll("td, th");
 
             for (var j = 0; j < cols.length; j++) {
+                row.push("GROUP: " + k);
                 row.push(cols[j].innerText);
             }
 
@@ -44,4 +47,5 @@ $(document).ready(function() {
         }
         downloadCSVFile(data.join("\n"), filename);
     }
+
 });

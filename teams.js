@@ -85,7 +85,7 @@ $(document).ready(function() {
         for (i = 0; i < groups.length; i++) {
             prunedgroups = prunedgroups.concat(groups[i]);
         }
-        console.log(prunedgroups);
+        //console.log(prunedgroups);
     }
 
     function printWorkshopTeams() {
