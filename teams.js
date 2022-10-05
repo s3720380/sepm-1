@@ -25,6 +25,7 @@ $(document).ready(function() {
                         studentsdata.push(results.data[i])
                     }
                 }
+                //console.log(studentsdata);
                 addStudentsToWorkShops();
                 createGroups();
                 printWorkshopTeams();
@@ -73,8 +74,11 @@ $(document).ready(function() {
     }
 
     function createGroups() {
-        console.log(JSON.stringify(workshopteams, null, 3))
-
+        //console.log(JSON.stringify(workshopteams, null, 3))
+        var groups = $.map(workshopteams, function(value) {
+            return [value]
+        })
+        console.log(groups)
     }
 
     function printWorkshopTeams() {
